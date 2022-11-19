@@ -1,0 +1,960 @@
+<div class="row" align="center">
+<div id="top-adwrapper" class="container topadssecnd" style="padding-top: 20px; text-align: center;">
+<ul class="pagination" style="margin-top: 0;">
+<li><a class="page-link" href="https://www.youtube.com/dotnettricks?sub_confirmation=1" target="_blank">YouTube Videos</a></li>
+<li><a class="page-link" href="https://www.dotnettricks.com/books?utm_source=dotnettricks&amp;utm_medium=link">Interview eBooks</a></li>
+<li><a class="page-link" href="https://www.dotnettricks.com/paths?utm_source=dotnettricks&amp;utm_medium=link">Learning Paths</a></li>
+<li><a class="page-link" href="https://www.dotnettricks.com/instructor-led-courses?utm_source=dotnettricks&amp;utm_medium=link">Unlimited Live Training</a></li>
+</ul>
+</div>
+<div class="mt-3 mb-2"><img class="img-fluid" src="https://dotnettrickscloud.blob.core.windows.net/article/120220829120804.webp" alt="MERN Stack CRUD Operations" /></div>
+</div>
+<div id="article" class="content mt-4">
+<div style="border-bottom: 4px solid #52bde8; padding-bottom: 15px; margin-bottom: 20px; background: #d5f3ff; padding: 8px;">
+<div class="articletitle">
+<h1><a href="https://www.dotnettricks.com/learn/react/mern-stack-crud-operations-example">https://www.dotnettricks.com/learn/react/mern-stack-crud-operations-example</a> MERN Stack CRUD Operations</h1>
+</div>
+<div class="row">
+<div class="col-sm-6"><a class="author-link" href="https://www.dotnettricks.com/mentors/manav-pandya"> <img class="rounded-circle articleImg lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/uploads/mentorImages/120180822120216.png" alt="Manav Pandya" data-src="https://dotnettrickscloud.blob.core.windows.net/uploads/mentorImages/120180822120216.png" /> &nbsp; Manav Pandya </a></div>
+<div class="col-sm-6"><span class="float-end mt-4"> <a id="print" class="float-end" style="color: #f56b08; font-size: 15px; font-weight: 600;"></a>&nbsp;Print&nbsp; <span class="float-end" style="color: #4e4e4e; font-size: 15px;">&nbsp;23 min read&nbsp;&nbsp;</span> </span></div>
+</div>
+<div class="row" style="font-size: 15px;">
+<div class="col-xs-6 col-md-3"><span title="Posted On"> 29 Aug 2022</span></div>
+<div class="col-xs-6 col-md-3"><span title="Level"> Advanced </span></div>
+<div class="col-xs-6 col-md-3"><span title="Total Views 26,950"> 26.9K Views </span></div>
+</div>
+</div>
+<div style="clear: both; padding-bottom: 15px;">
+<p>In this part of the article, we are going to learn about the MERN stack, which is the trending technology stack nowadays, you may have questions like what is the Difference between MEAN Stack and MERN Stack, so let me clarify that there is no major difference between them except front-end technology so that here in this article you can skip Angular and Consider React as front-end technology.</p>
+<p>It is a very comprehensive step-by-step guide for building the create-read-update-delete (CRUD) web application from the scratch using MERN (Mongo, Express, React, Node.js) stack which is one of the most popular web application stacks based on Node.js. Both MEAN and MERN stacks are almost the same except the MEAN stack using Angular as the front-end framework and the MERN stack using React to represent the UI layer. This Is a very basic step-by-step guide of the MERN stack from where you can learn how to configure and get started with the development.</p>
+<h2>MERN Stands For</h2>
+<ul class="unorderlist">
+<li>
+<h3>MongoDB</h3>
+<p>It is NoSql Database documents that act as a backend for our MERN stack web application.</p>
+</li>
+<li>
+<h3>ExpressJS</h3>
+<p>ExpressJS is a JavaScript-based backend web application framework and is mostly used to create API for our MERN stack app.</p>
+</li>
+<li>
+<h3>React</h3>
+<p>React is a JavaScript-based library that is used to build a powerful and attractive user interface; it has so many features which make it unique among other front-end libraries like Virtual DOM.</p>
+</li>
+<li>
+<h3>NodeJS</h3>
+<p>NodeJS is a JavaScript-based run-time environment, which enables us to create a JavaScript-based back-end environment and network applications.</p>
+<p>The main attraction is that in MERN stack everything you write is somehow JavaScript. Starting from the Database of MongoDB, to the front-end technology which is React, so if you have enough knowledge of JavaScript then you will find it pretty relevant to your technology stack.</p>
+</li>
+</ul>
+<p>In this article, we are going to cover all of the layers of the MERN stack by creating a separate layer of the application such as UI later and the back-end system.</p>
+<h2>Project Structure</h2>
+<p>As we have discussed earlier that our front-end will be a library called React and backend/server codes are related to MongoDB, Express, and Nodejs, so for that, we need to have different folder structures accordingly, and to simplify the learning experience, we need two folders initially which is used for front-end and back-end.</p>
+<h3>Front-end Project Structure</h3>
+<p>As a Front-end, we are going to use React application and every operation related to the CRUD will be implemented inside <a href="https://www.dotnettricks.com/learn/react/getting-started-with-react">React application</a>, please find the below snap which shows the complete project structure where we have separated the list of components and other core configuration files.</p>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud1.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud1.png" /></div>
+<h3>Back-end Project Structure</h3>
+<p>The back-end application contains the different files related to API routing, data models, and the express/node server configuration.</p>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud2.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud2.png" /></div>
+<h2>Project Prerequisites</h2>
+<p>To get started with the MERN stack, we need to have installed the following tools and editors to simplify the learning and development experience easier.</p>
+<h3>Install NodeJs</h3>
+<code>https://nodejs.org/en/download/</code>
+<h3>MongoDB</h3>
+<code>https://www.mongodb.com/download-center</code>
+<h3>Code Editor</h3>
+<p>To create and implement the MERN stack application, we need to have any code editor, and for this tutorial, we will be using the popular editor called Visual Studio Code but one can also use other tools such as Visual Studio, Nuclide, etc. for now, we are going to use Microsoft Visual Studio Code for this tutorial.</p>
+<h2>Setup and Installation</h2>
+<h2>Create React Project</h2>
+<p>Our first and the basic requirement is to create a new react app using create-react-app which provides the sample boilerplate project files or we can say quickstart project. To create a new project, we need to install it using the below npm command.</p>
+<strong>npm install &ndash;g create-react-app</strong>
+<p>And create a new project using the following command.</p>
+<strong>create-react-app mern-stack-crud</strong>
+<p>Then you can see that our new project is now created, and the folder structure looks as given below.</p>
+<div>&nbsp;</div>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud3.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud3.png" /></div>
+<p>When we are done with the above tools by installing and doing all required configuration, now it's time to install a few important dependencies to work with Front-end and back-end services for the MERN stack as explained below.</p>
+<h3>Front-end dependencies</h3>
+<div class="headrow">
+<div style="width: 15%;">Package Description</div>
+<hr>
+</div>
+<style>.codecolor{color:#f90d0d;}</style>
+<div class="divrow">
+<code class="codecolor">npm install react-router-dom</code>
+<div>To work with routing</div>
+</div>
+<div class="divrow">
+<code class="codecolor">npm install react-bootstrap</code>
+<div>For using different bootstrap components in our application</div>
+</div>
+<div class="divrow">
+<code class="codecolor">npm install axios</code>
+<div>To call REST API from services</div>
+</div>
+<hr>
+<div class="divrow">
+<div><b>React Project Run Command</b></div>
+<code class="codecolor">npm start</code>
+<hr>
+<h3>Back-end dependencies</h3>
+<div class="headrow">
+<div style="width: 15%;">Package Description</div>
+<hr>
+</div>
+<div class="divrow">
+<code class="codecolor">npm install mongoose</code>
+<div>It is MongoDB object modeling for nodejs</div>
+</div>
+<div class="divrow">
+<code class="codecolor">npm install express</code>
+<div>Runs as a module for nodejs and is useful for routing</div>
+</div>
+<div class="divrow">
+<code class="codecolor">npm install body-parser</code>
+<div>Parse the response data coming from API and validate before using it in our application</div>
+</div>
+<div class="divrow">
+<code class="codecolor">npm install cors</code>
+<div>To enable cors middleware using nodejs with various options</div>
+</div>
+<hr>
+<div class="divrow">
+<div><b>Node Project Run Command</b></div>
+<code class="codecolor"># cd Server</code><br>
+<code class="codecolor"># node server.js</code>
+
+<pre>
+<code>
+->npm i -D nodemon
+->node server
+
+package.json->
+Edit
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+
+to 
+ "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+
+->npm start (Once time and again reload once)
+->npm run server (Only one time auto run)
+
+
+==============================================
+
+Command List for Getting Start React App
+==========================================
+->npm i -g create-react-app (i is install -g is golabally installation react app)
+->npm i -g npm (Update available 5.5.1 to 5.8.0 Run npm i -g npm to update)
+->create-react-app <react_project_name>
+->cd <react_project_name>
+
+Change to client's package.josn after last
+=========================================
+"proxy": "http://localhost:5000"
+======================
+->cd client
+->npm start
+
+->cd ..
+->npm i concurrently (One command Multiple server run [One command multiple command combine run by this module])
+
+Node js ->package.json
+After concurrently install have to changes in node server package.json
+=================================================================
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+
+->npm run dev (AFter this command will be run below 2 server)
+http://localhost:3000 (Client React App)
+http://localhost:5000 (Node Server API)
+
+->Change to client/public/index.html (CSS and JS path)
+
+
+</code>
+</pre>
+
+</div>
+
+<h2>Setup of Backend</h2>
+<p>So far in this guide, we have installed all the necessary dependencies and tools to get started with the MERN stack along with UI layer as a React application, now it&rsquo;s time to set up our backend application so that we can use it in our front-end application.</p>
+<h3>Setting up a server environment</h3>
+<p>We are going to create the server application with the help of nodejs and express framework and will set up basic configuration such as database connection with Mongo server, route configuration, express configuration and other required setup. For that create a new folder named Server into the root directory and inside the folder, create a new file called server.js as given below.</p>
+<strong> Server.js</strong>
+<pre class="prettyprint lang-html linenums"> 
+ // Imported required packages
+ const express = require('express'),
+ path = require('path'),
+ bodyParser = require('body-parser'),
+ cors = require('cors'),
+ mongoose = require('mongoose');
+ 
+ // MongoDB Databse url
+ var mongoDatabase = 'mongodb://localhost:27017/employeeDetails';
+ 
+ // Created express server
+ const app = express();
+ mongoose.Promise = global.Promise;
+ 
+ // Connect Mongodb Database
+ mongoose.connect(mongoDatabase, { useNewUrlParser: true }).then(
+ () =&gt; { console.log('Database is connected') },
+ err =&gt; { console.log('There is problem while connecting database ' + err) }
+ );
+ 
+ // All the express routes
+ const employeeRoutes = require('../Routes/Employee.route');
+ 
+ // Conver incoming data to JSON format
+ app.use(bodyParser.json());
+ 
+ // Enabled CORS
+ app.use(cors());
+ 
+ // Setup for the server port number
+ const port = process.env.PORT || 4000;
+ 
+ // Routes Configuration
+ app.use('/employees', employeeRoutes);
+ 
+ // Staring our express server
+ const server = app.listen(port, function () {
+ console.log('Server Lisening On Port : ' + port);
+ });
+</pre>
+<p>In the above file, we have imported all the external dependencies as well as third-party packages that we have installed previously, apart from that, imported a few files related to routing. But the most important step of the configuration is that we have connected our application to MongoDB using the below given code snippet.</p>
+<pre class="prettyprint lang-html linenums"> 
+ // MongoDB Databse url
+ var mongoDatabase = 'mongodb://localhost:27017/employeeDetails';
+ 
+ // Connect Mongodb Database
+ mongoose.connect(mongoDatabase, { useNewUrlParser: true }).then(
+ () =&gt; { console.log('Database is connected') },
+ err =&gt; { console.log('There is problem while connecting database ' + err) }
+ );
+</pre>
+<p>As you can see that the database of MongoDB is running on the port number "27017" and my database name is "employeeDetails", so our all the network calls will be reflected from the selected database only.</p>
+<h3>MongoDB Model</h3>
+<p>In this tutorial, we are going to take an example table of Employee details along with the fields such as first name, last name, email, etc, so for that, we need to create the model schema which represent the employee entity. Create a new folder called "Model" and create a new file inside that folder as given below.</p>
+<strong>Employee.js</strong>
+<pre class="prettyprint lang-html linenums"> 
+ const mongoose = require('mongoose');
+ const Schema = mongoose.Schema;
+ 
+ // List of columns for Employee schema
+ let Employee = new Schema({
+ firstName: {
+ type: String
+ },
+ lastName: {
+ type: String
+ },
+ email: {
+ type: String
+ },
+ phone: {
+ type: Number
+ }
+ },{
+ collection: 'employees'
+ });
+ 
+ module.exports = mongoose.model('Employee', Employee);
+</pre>
+<h2>Create an API Controller</h2>
+<p>One of the necessary step of the MERN stack CRUD application is to create the REST API. and for that, we need to create an API controller based on the URL that the user is going to traverse. Create a new folder called Routes and inside the folder create a new file called<strong>&nbsp;Employee.route.js</strong>.</p>
+<pre class="prettyprint lang-html linenums"> 
+ // Importing important packages
+ const express = require('express');
+ 
+ // Using express and routes
+ const app = express();
+ const employeeRoute = express.Router();
+ 
+ // Employee module which is required and imported
+ let employeeModel = require('../Model/Employee');
+ 
+ // To Get List Of Employees
+ employeeRoute.route('/').get(function (req, res) {
+ employeeModel.find(function (err, employee) {
+ if (err) {
+ console.log(err);
+ }
+ else {
+ res.json(employee);
+ }
+ });
+ });
+ 
+ // To Add New Employee
+ employeeRoute.route('/addEmployee').post(function (req, res) {
+ let employee = new employeeModel(req.body);
+ employee.save()
+ .then(game =&gt; {
+ res.status(200).json({ 'employee': 'Employee Added Successfully' });
+ })
+ .catch(err =&gt; {
+ res.status(400).send("Something Went Wrong");
+ });
+ });
+ 
+ // To Get Employee Details By Employee ID
+ employeeRoute.route('/editEmployee/:id').get(function (req, res) {
+ let id = req.params.id;
+ employeeModel.findById(id, function (err, employee) {
+ res.json(employee);
+ });
+ });
+ 
+ // To Update The Employee Details
+ employeeRoute.route('/updateEmployee/:id').post(function (req, res) {
+ employeeModel.findById(req.params.id, function (err, employee) {
+ if (!employee)
+ return next(new Error('Unable To Find Employee With This Id'));
+ else {
+ employee.firstName = req.body.firstName;
+ employee.lastName = req.body.lastName;
+ employee.email = req.body.email;
+ employee.phone = req.body.phone;
+ 
+ employee.save().then(emp =&gt; {
+ res.json('Employee Updated Successfully');
+ })
+ .catch(err =&gt; {
+ res.status(400).send("Unable To Update Employee");
+ });
+ }
+ });
+ });
+ 
+ // To Delete The Employee
+ employeeRoute.route('/deleteEmployee/:id').get(function (req, res) {
+ employeeModel.findByIdAndRemove({ _id: req.params.id }, function (err, employee) {
+ if (err) res.json(err);
+ else res.json('Employee Deleted Successfully');
+ });
+ });
+ 
+ module.exports = employeeRoute;
+</pre>
+<p>In this file, we have created the set of APIs to serves the different purpose such as adding, updating, deleting and fetching the employee records.</p>
+<div class="headrow">
+<div style="width: 15%;">API</div>
+<div>Description</div>
+</div>
+<div class="divrow">
+<div><code>http://localhost:4000/employees</code></div>
+<div>To get a list of employee</div>
+</div>
+<div class="divrow">
+<div><code>http://localhost:4000/employees/addEmployee</code></div>
+<div>To add a new employee</div>
+</div>
+<div class="divrow">
+<div><code>http://localhost:4000/employees/editEmployee/id</code></div>
+<div>To get employee by id</div>
+</div>
+<div class="divrow">
+<div><code>http://localhost:4000/employees/updateEmployee/id</code></div>
+<div>To update employee</div>
+</div>
+<div class="divrow">
+<div><code>http://localhost:4000/employees/deleteEmployee/id</code></div>
+<div>To delete employee</div>
+</div>
+<h2>Test REST API&rsquo;s</h2>
+<p>We have created the set of APIs, and to verify or ensure that how those API returns the data, we can test it with the API testing tools such as POSTMAN as given below.</p>
+<ol class="orderlist">
+<li>
+<h3>Post Request</h3>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud4.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud4.png" /></div>
+</li>
+<li>
+<h3>Get Request</h3>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud5.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud5.png" /></div>
+</li>
+<li>
+<h3>Get By Id Request</h3>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud6.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud6.png" /></div>
+</li>
+<li>
+<h3>Put Request</h3>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud7.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud7.png" /></div>
+</li>
+<li>
+<h3>Delete Request</h3>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud8.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud8.png" /></div>
+</li>
+</ol>
+<h2>Front-end Project</h2>
+<p>Upto this section, we have completed our back-end implementation, and to manipulate the employee data, we need to use the different APIs in our react application. For user Interface, we are going to use a different component of bootstrap using third-party package called "react-bootstrap", and a few components we have used in this application are listed below.</p>
+<ul class="unorderlist">
+<li>
+<p>Navbar</p>
+</li>
+<li>
+<p>Nav</p>
+</li>
+<li>
+<p>Table</p>
+</li>
+<li>
+<p>Button</p>
+<p>So these are some primary components we have used to design our user interface.</p>
+</li>
+</ul>
+<p>The next step is to create a new folder called "Components" inside /src directory and create a new file called Header.js and the content of the file is given below.</p>
+<strong>Header.js</strong>
+<pre class="prettyprint lang-html linenums"> 
+ import React, { Component } from 'react';
+ import { Navbar, Nav, NavItem } from 'react-bootstrap';
+ // To use routing functionalities
+ import { Link } from 'react-router-dom';
+ import '../index.css';
+ 
+ class Header extends Component {
+ render() {
+ return (
+ &lt;div&gt;
+ &lt;Navbar&gt;
+ &lt;Navbar.Header&gt;
+ &lt;Navbar.Brand&gt;
+ &lt;a href="javascript:void(0)"&gt;MERN Stack CRUD Operations&lt;/a&gt;
+ &lt;/Navbar.Brand&gt;
+ &lt;/Navbar.Header&gt;
+ &lt;Nav&gt;
+ &lt;NavItem href="javascript:void(0)"&gt;
+ &lt;Link to="/"&gt;Home&lt;/Link&gt;
+ &lt;/NavItem&gt;
+ &lt;NavItem href="javascript:void(0)"&gt;
+ &lt;Link to="/addemployee"&gt;Add New Employee&lt;/Link&gt;
+ &lt;/NavItem&gt;
+ &lt;/Nav&gt;
+ &lt;/Navbar&gt;
+ &lt;/div&gt;
+ );
+ }
+ }
+export default Header;
+</pre>
+<p>This file will act as a reusable navigation bar for the React application. the next step is to create a new file "Main.js", in which we will implement the routing part of our MERN stack app by using the configuration of "react-router-dom".</p>
+<strong>Main.js</strong>
+<pre class="prettyprint lang-html linenums"> 
+ import React, { Component } from 'react';
+ import { Switch, Route } from 'react-router-dom';
+ 
+ // Our all component files
+ import ListEmployee from '../Components/ListEmployee';
+ import AddEmployee from '../Components/AddEmployee';
+ import EditEmployee from '../Components/EditEmployee';
+ 
+ class Main extends Component {
+ 
+ render() {
+ return (
+ &lt;main&gt;
+ &lt;Switch&gt;
+ &lt;Route exact path='/' component={ListEmployee} /&gt;
+ &lt;Route path='/list' component={ListEmployee} /&gt; 
+ &lt;Route path='/addemployee' component={AddEmployee} /&gt;
+ &lt;Route path='/editemployee/:id' component={EditEmployee} /&gt;
+ &lt;/Switch&gt;
+ &lt;/main&gt;
+ );
+ }
+ }
+
+ export default Main;
+</pre>
+<p>The next step is to include both these files and include them in our main component file called App.js as given below.</p>
+<strong>/src/App.js</strong>
+<pre class="prettyprint lang-html linenums"> import React, { Component } from 'react';
+ import Header from './Components/Header';
+ import Main from './Components/Main';
+ 
+ class App extends Component {
+ render() {
+ return (
+ &lt;div&gt;
+ &lt;Header /&gt;
+ &lt;Main /&gt;
+ &lt;/div&gt;
+ );
+ }
+ }
+ 
+ export default App;
+</pre>
+<p>To complete our routing configuration, we need to use the "BrowserRouter" selector which is part of the "react-router-dom" package and used to allow applications to switch from one router to other routers based on the URL used into the browser by comparing it.</p>
+<pre class="prettyprint lang-html linenums"> /src/index.js
+ import React from 'react';
+ import ReactDOM from 'react-dom';
+ import './index.css';
+ import App from './App';
+ import registerServiceWorker from './registerServiceWorker';
+ import { BrowserRouter } from 'react-router-dom';
+ 
+ ReactDOM.render(
+ &lt;BrowserRouter&gt;
+ &lt;App /&gt;
+ &lt;/BrowserRouter&gt;, document.getElementById('root'));
+ registerServiceWorker();
+</pre>
+<h2>Service File</h2>
+<p>In this article, for the delete requests, we are going to using a service file to call the delete API from the the back-end services, still, we can call the API directly from the component, for that, create a new file called Services.js as given below.</p>
+<strong>/src/Components/Services.js</strong>
+<pre class="prettyprint lang-html linenums"> import axios from 'axios';
+ 
+ class EmployeeService {
+ 
+ deleteEmployee(id) {
+ axios.get('http://localhost:4000/employees/deleteEmployee/' + id)
+ .then(() =&gt; {
+ console.log('Employee Deleted !!!')
+ })
+ .catch((error) =&gt; {
+ console.log(error)
+ })
+ }
+ }
+ 
+ export default EmployeeService;
+</pre>
+<h2>CRUD Pages</h2>
+<h3>Create Page</h3>
+<p>To create a new employee, we need to have one component where we can implement the form-related configuration, and for that I would suggest you create a new file called AddEmployee.js as given below.</p>
+<strong>/src/Components/AddEmployee.js</strong>
+<pre class="prettyprint lang-html linenums"> import React, { Component } from 'react';
+ import axios from 'axios';
+ 
+ const customStyle = {
+ width: '300px',
+ margin: '0 auto'
+ }
+ 
+ class AddEmployee extends Component {
+ constructor(props) {
+ super(props);
+ this.state = {
+ firstName: '',
+ lastName: '',
+ email: '',
+ phone: ''
+ }
+ }
+ 
+ // When value changes of the fields
+ handleChange = (event) =&gt; {
+ this.setState({ [event.target.name]: event.target.value });
+ }
+ 
+ // To add new employee when user submits the form
+ handleSubmit = (event) =&gt; {
+ event.preventDefault();
+ const { firstName, lastName, email, phone } = this.state;
+ axios.post('http://localhost:4000/employees/addEmployee', {
+ firstName: firstName,
+ lastName: lastName,
+ email: email,
+ phone: phone,
+ })
+ .then((response) =&gt; {
+ console.log(response);
+ this.props.history.push('/');
+ })
+ .catch((error) =&gt; {
+ console.log(error);
+ });
+ }
+ 
+ render() {
+ return (
+ &lt;div className="container"&gt;
+ &lt;form style={customStyle} onSubmit={this.handleSubmit}&gt;
+ &lt;label&gt;
+ First Name
+ &lt;input
+ name="firstName"
+ type="text"
+ value={this.state.firstName}
+ onChange={this.handleChange}
+ className="form-control"
+ /&gt;
+ &lt;/label&gt;
+ &lt;br /&gt;
+ &lt;label&gt;
+ Last Name
+ &lt;input
+ name="lastName"
+ type="text"
+ value={this.state.lastName}
+ onChange={this.handleChange}
+ className="form-control"
+ /&gt;
+ &lt;/label&gt;
+ &lt;br /&gt;
+ &lt;label&gt;
+ Email
+ &lt;input
+ name="email"
+ type="text"
+ value={this.state.email}
+ onChange={this.handleChange}
+ className="form-control"
+ /&gt;
+ &lt;/label&gt;
+ &lt;br /&gt;
+ &lt;label&gt;
+ Phone No
+ &lt;input
+ name="phone"
+ type="text"
+ value={this.state.phone}
+ onChange={this.handleChange}
+ className="form-control"
+ /&gt;
+ &lt;/label&gt;
+ &lt;br /&gt;
+ &lt;input
+ type="submit"
+ value="submit"
+ className="btn btn-primary"
+ /&gt;
+ &lt;/form&gt;
+ &lt;/div&gt;
+ );
+ }
+ }
+ 
+ export default AddEmployee;
+</pre>
+<p>As you can see into the above code snippet, we have implemented a component with the form and other steps as given below.</p>
+<ul class="unorderlist">
+<li>
+<p>Html form for Add new employee</p>
+</li>
+<li>
+<p>Change event for all HTML form controls</p>
+</li>
+<li>
+<p>Submit an event to call AddEmployee REST API</p>
+</li>
+</ul>
+<h3>Read Page</h3>
+<p>On this page, we are going to list down the set of employee records, and also enable the user to edit and delete any specific record by providing additional actions buttons. For that create a new file called ListEmployee.js as given below.</p>
+<strong>/src/Components/ListEmployee.js</strong>
+<pre class="prettyprint lang-html linenums"> 
+ import React, { Component } from 'react';
+ import axios from 'axios';
+ import { Table, Button } from 'react-bootstrap';
+ // To use routing functionalities
+ import { Link } from 'react-router-dom';
+ import '../index.css';
+ import EmployeeService from './Services';
+ 
+ var divStyle = {
+ margin: '8% 8%',
+ };
+ 
+ class ListEmployee extends Component {
+ 
+ constructor(props) {
+ super(props);
+ this.employeeService = new EmployeeService();
+ this.state = {
+ employees: []
+ }
+ this.deleteEmployee = this.deleteEmployee.bind(this);
+ }
+ 
+ componentDidMount = () =&gt; {
+ this.getEmployeeList();
+ }
+ 
+ // To get all the employees
+ getEmployeeList() {
+ axios.get('http://localhost:4000/employees')
+ .then((response) =&gt; {
+ console.log(response);
+ this.setState({
+ employees: response.data
+ });
+ })
+ .catch((error) =&gt; {
+ console.log(error);
+ })
+ }
+ 
+ // To delete any employee
+ deleteEmployee(empid) {
+ this.employeeService.deleteEmployee(empid);
+ this.getEmployeeList();
+ }
+ 
+ render() {
+ const { employees } = this.state;
+ return (
+ &lt;div style={divStyle}&gt;
+ &lt;Table responsive&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;#&lt;/th&gt;
+ &lt;th&gt;First Name&lt;/th&gt;
+ &lt;th&gt;Last Name&lt;/th&gt;
+ &lt;th&gt;Email&lt;/th&gt;
+ &lt;th&gt;Phone&lt;/th&gt;
+ &lt;th&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ {
+ employees &amp;&amp; employees.map((employee, i) =&gt; {
+ return (
+ &lt;tr key={i}&gt;
+ &lt;td&gt;{i}&lt;/td&gt;
+ &lt;td&gt;{employee.firstName}&lt;/td&gt;
+ &lt;td&gt;{employee.lastName}&lt;/td&gt;
+ &lt;td&gt;{employee.email}&lt;/td&gt;
+ &lt;td&gt;{employee.phone}&lt;/td&gt;
+ &lt;td&gt;
+ &lt;Link to={"editemployee/" + employee._id} className="btn btn-primary"&gt;Edit&lt;/Link&gt;
+ &lt;/td&gt;
+ &lt;td&gt;
+ &lt;Button onClick={() =&gt; this.deleteEmployee(employee._id)} bsStyle="danger" &gt;Delete&lt;/Button&gt;
+ &lt;/td&gt;
+ &lt;/tr&gt;
+ )
+ })
+ }
+ &lt;/tbody&gt;
+ &lt;/Table&gt;
+ &lt;/div&gt;
+ );
+ } 
+ }
+ 
+ export default ListEmployee;
+</pre>
+<p>FRom the above main page of the application, we have displayed the list of employees using the bootstrap table and also provide two different action buttons which enable the user to manipulate employee data for the edit and delete operations.</p>
+<p>When the user clicks on the action buttons, respective events is being triggered along with the network call using the redux configuration.</p>
+<h3>Update Page</h3>
+<p>When the user wants to edit the employee, at that time they will be navigated to the edit page where the details of the existing employee will be populated automatically into the form and the user will be able to update it after doing certain changes and the component for the same is given below.</p>
+<strong>/src/Components/EditEmployee.js</strong>
+<pre class="prettyprint lang-html linenums"> 
+ import React, { Component } from 'react';
+ import axios from 'axios';
+ 
+ const customStyle = {
+ width: '300px',
+ margin: '0 auto'
+ }
+ 
+ class EditEmployee extends Component {
+ constructor(props) {
+ super(props);
+ this.state = {
+ firstName: '',
+ lastName: '',
+ email: '',
+ phone: ''
+ }
+ }
+ 
+ componentDidMount = () =&gt; {
+ this.getEmployeeById();
+ }
+ 
+ // To get employee based on ID
+ getEmployeeById() {
+ axios.get('http://localhost:4000/employees/editEmployee/' + this.props.match.params.id)
+ .then((response) =&gt; {
+ this.setState({
+ firstName: response.data.firstName,
+ lastName: response.data.lastName,
+ email: response.data.email,
+ phone: response.data.phone
+ });
+ })
+ .catch((error) =&gt; {
+ console.log(error);
+ })
+ }
+ 
+ handleChange = (event) =&gt; {
+ this.setState({ [event.target.name]: event.target.value });
+ }
+ 
+ // To update the record on submit
+ handleSubmit = (event) =&gt; {
+ event.preventDefault();
+ const { firstName, lastName, email, phone } = this.state;
+ axios.post('http://localhost:4000/employees/updateEmployee/' + this.props.match.params.id, {
+ firstName: firstName,
+ lastName: lastName,
+ email: email,
+ phone: phone,
+ })
+ .then((response) =&gt; {
+ console.log(response);
+ this.props.history.push('/');
+ })
+ .catch((error) =&gt; {
+ console.log(error);
+ });
+ 
+ }
+ 
+ render() {
+ return (
+ &lt;div className="container"&gt;
+ &lt;form style={customStyle} onSubmit={this.handleSubmit}&gt;
+ &lt;label&gt;
+ First Name
+ &lt;input
+ name="firstName"
+ type="text"
+ value={this.state.firstName}
+ onChange={this.handleChange}
+ className="form-control"
+ /&gt;
+ &lt;/label&gt;
+ &lt;br /&gt;
+ &lt;label&gt;
+ Last Name
+ &lt;input
+ name="lastName"
+ type="text"
+ value={this.state.lastName}
+ onChange={this.handleChange}
+ className="form-control"
+ /&gt;
+ &lt;/label&gt;
+ &lt;br /&gt;
+ &lt;label&gt;
+ Email
+ &lt;input
+ name="email"
+ type="text"
+ value={this.state.email}
+ onChange={this.handleChange}
+ className="form-control"
+ /&gt;
+ &lt;/label&gt;
+ &lt;br /&gt;
+ &lt;label&gt;
+ Phone No
+ &lt;input
+ name="phone"
+ type="text"
+ value={this.state.phone}
+ onChange={this.handleChange}
+ className="form-control"
+ /&gt;
+ &lt;/label&gt;
+ &lt;br /&gt;
+ &lt;input
+ type="submit"
+ value="submit"
+ className="btn btn-primary"
+ /&gt;
+ &lt;/form&gt;
+ &lt;/div&gt;
+ );
+ }
+ }
+ 
+ export default EditEmployee;
+</pre>
+<p>In above component, we have implemented few set of operations as given below.</p>
+<ul class="unorderlist">
+<li>
+<p>Calling REST API to get employee details by ID</p>
+</li>
+<li>
+<p>Filling the form data as per the details based on the API call</p>
+</li>
+<li>
+<p>Submit the updated data when the user submits the form</p>
+<p>Now our CRUD-related files are created and also implemented API calls, the next step is to add CDN to the root HTML file.</p>
+</li>
+</ul>
+<h2>Add Stylesheet CDN</h2>
+<p>As we have discussed previously that we are using different components of react-bootstrap, so for that we need to add a respective stylesheets into the root HTML file as described below.</p>
+<strong>/public/index.html</strong>
+<pre class="prettyprint lang-html linenums"> 
+ &lt;!DOCTYPE html&gt;
+ &lt;html lang="en"&gt;
+ 
+ &lt;head&gt;
+ &lt;meta charset="utf-8"&gt;
+ &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+ &lt;meta name="theme-color" content="#000000"&gt;
+ &lt;link rel="manifest" href="%PUBLIC_URL%/manifest.json"&gt;
+ &lt;link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"&gt;
+ &lt;!-- Latest compiled and minified CSS --&gt;
+ &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+ crossorigin="anonymous"&gt;
+ &lt;!-- Optional theme --&gt;
+ &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+ crossorigin="anonymous"&gt;
+ &lt;title&gt;React App&lt;/title&gt;
+ &lt;/head&gt;
+ 
+ &lt;body&gt;
+ &lt;noscript&gt;
+ You need to enable JavaScript to run this app.
+ &lt;/noscript&gt;
+ &lt;div id="root"&gt;&lt;/div&gt;
+ &lt;/body&gt;
+ 
+ &lt;/html&gt;
+</pre>
+<h2> Running MERN Stack APP</h2>
+<p>In visual studio code PowerShell or command prompt, use below command to run the front-end application.</p>
+<strong>Npm start</strong>
+<p>Apart from the front-end app, run the server-side application using the seperate terminal/powershell, we need to change the directory and execute the below command.</p>
+<strong>Cd Server</strong> <strong>Node server.js</strong>
+<h2>How It Works</h2>
+<h3>Create Operation</h3>
+<p>Click on the "Add New Employee" link and add form details and you can add the record to the database.</p>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud9.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud9.png" /></div>
+<h3>Read Operation</h3>
+<p>Once you click on the "Home" button, you will be redirected to the new page where the table is populated along with the employee records fetch from the database.</p>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud10.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud10.png" /></div>
+<h3>Edit/Update Operation</h3>
+<p>Once you click on the edit button from the employee list page, it will be redirected to the edit page where the specific employee details is populated into the form, it can be changes and submitted once user click on the submit button.</p>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud11.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud11.png" /></div>
+<h3>Delete Operation</h3>
+<p>When we click on the delete button, the record of the employee can be deleted from the database.</p>
+<div class="center"><img class=" lazyloaded" src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud12.png" alt="" data-src="https://dotnettrickscloud.blob.core.windows.net/img/react/meanst-crud12.png" /></div>
+<h2>Important Note</h2>
+<p>We are done with the CRUD operations using the MERN stack, but because of this tutorial is for learning purpose, certain things are not covered and as a exercise, you can developed few enhancements areas as described below.</p>
+<ul class="unorderlist">
+<li>
+<p>Better user interface</p>
+</li>
+<li>
+<p>Provide proper form validations</p>
+</li>
+<li>
+<p>Show notification for user acknowledgment</p>
+</li>
+</ul>
+<h5>Summary</h5>
+<p>The MERN stack is a popular stack to work upon and for the same practices, we have created a MERN stack CRUD operation with the different JavaScript technologies and database services such as MongoDB, ExpressJs, React, and NodeJs,</p>
+<p>By using MERN stack we can create high performance, scalable and robust applications bu just using different JavaScript-based technologies, I would recommend you to download the source code and play around that and try to complete the additional exercise given at the end of this guide. Thanks for reading.</p>
+</div>
+</div>
